@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}  
+::-webkit-scrollbar-track {
+    background-color: transparent;
+} 
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+} 
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+.header {
+    width: 100%;
+    height: 96px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: tomato;
+}
+.header-title {
+    margin-left: 32px;
+    color: aliceblue;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.middle {
+    width: 100%;
+    height: 100px;
+    padding-left: 32px;
+}
+.category {
+    display: flex;
+    flex-direction: column;
+}
+.category-title {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+.category-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.slot-card {
+    flex-shrink: 0;
+    width: 256px;
+    height: 256px;
+    margin-bottom: 32px;
+    margin-right: 32px;
+    border-radius: 5%;
+}
+.slot-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    text-align: center;
+    margin-top: 2px;
+    font-size: 24px;
+    font-weight: 500;
+    color: black;
+}
+.slot-form {
+    width: 256px;
+    height: 256px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    transition: all 500ms;
+}
+.slot-card:hover .slot-form {
+    background-color: rgba(60, 60, 60, 0.6);
+    cursor: pointer;
+    transition: all 500ms;
+}
+.slot-card:hover .button-play {
+    visibility: visible;
+    transition: all 500ms;
+}
+.button-play {
+    background: tomato;
+    border: 1px solid tomato;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: aliceblue;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    visibility: hidden;
+    z-index: 3;
+}
+  
+.button-play:hover, .button-play:active {
+    background-color: rgba(255, 100, 71, 0.4);
+    background-position: 0 0;
+    color: aliceblue;
+}
+  
+.button-play:active {
+    opacity: .5;
+}
+
+@media only screen and (max-width: 1000px) {
+    .header {
+        height: 192px;
+    }
+
+    .header-title {
+        font-size: 64px;
+    }
+    .category-title {
+        font-size: 48px;
+    }
+    .slot-card {
+        margin-bottom: 64px;
+    }
+    .slot-card, .slot-form {
+        width: 412px;
+        height: 412px;
+    }
+    .button-play {
+        border: 2px solid tomato;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.1) 2px 4px 8px;
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 32px;
+        min-height: 80px;
+        padding: 24px 28px;
+    }
+    .slot-name {
+        font-size: 44px;
+        font-weight: 600;
+        margin-top: 4px;
+    }
+}
